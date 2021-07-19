@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var levleTextLbl: UILabel!
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
-    var money : Int = 0
+    var money : Int = 14990
     
     
     // MARK: Skill View
@@ -31,47 +31,49 @@ class ViewController: UIViewController {
         // 그라데이션
 //        headView.setGradient(color1: UIColor.darkGray, color2: UIColor.lightGray)
 //        setZ()
-        setMoney()
+        passiveSkill()
         setImage()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-    // MARK: Set Money Label
-    func setMoney() {
-        self.moneyLbl.text = String(money) + "원"
-    }
-    
-    
+ 
     // MARK: Set ImageView & Level Label
     func setImage()
     {
-        if (money <= 5000) {
-            self.levleTextLbl.text = "거지"
-            self.characterImg.image = UIImage(named: "level1")
-        }
-        else if (money > 5000 && money <= 10000) {
-            self.levleTextLbl.text = "일반인"
-            self.characterImg.image = UIImage(named: "level2")
-        }
-        else if (money > 10000 && money <= 15000) {
-            self.levleTextLbl.text = "대기업 임원"
-            self.characterImg.image = UIImage(named: "level3")
-        }
-        else {
-            self.levleTextLbl.text = "부자"
-            self.characterImg.image = UIImage(named: "level4")
+        DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
+                if (self.money <= 5000) {
+                    self.levleTextLbl.text = "흙수저"
+                    self.characterImg.image = UIImage(named: "level1")
+                }
+                else if (self.money > 5000 && self.money <= 10000) {
+                    self.levleTextLbl.text = "동수저"
+                    self.characterImg.image = UIImage(named: "level2")
+                }
+                else if (self.money > 10000 && self.money <= 15000) {
+                    self.levleTextLbl.text = "은수저"
+                    self.characterImg.image = UIImage(named: "level3")
+                }
+                else {
+                    self.levleTextLbl.text = "금수저"
+                    self.characterImg.image = UIImage(named: "level4")
+                }
+            }
         }
     }
     
+    
+    // MARK: 패시브 스킬
     func passiveSkill() {
-        self.money += 1
+        DispatchQueue.global(qos: .background).async {
+            while(true) {
+                self.money += 1
+                usleep(1000000)
+                DispatchQueue.main.async {
+                    self.moneyLbl.text = String(self.money) + " 원"
+                }
+            }
+        }
     }
-    
-    
-    
     
     
     // MARK: zPositon Function

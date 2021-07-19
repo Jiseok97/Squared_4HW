@@ -23,7 +23,7 @@
                                         <rect key="frame" x="10" y="10" width="105" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmf-vS-0nz">
-                                                <rect key="frame" x="31" y="14" width="35" height="24"/>
+                                                <rect key="frame" x="25" y="14" width="35" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="ZmJ-ij-fw9"/>
-                                            <constraint firstItem="Rmf-vS-0nz" firstAttribute="leading" secondItem="CcR-mc-12K" secondAttribute="leading" constant="31" id="nCn-Mp-Kh8"/>
+                                            <constraint firstItem="Rmf-vS-0nz" firstAttribute="leading" secondItem="CcR-mc-12K" secondAttribute="leading" constant="25" id="nCn-Mp-Kh8"/>
                                             <constraint firstItem="Rmf-vS-0nz" firstAttribute="top" secondItem="CcR-mc-12K" secondAttribute="top" constant="14" id="vN1-wl-ekZ"/>
                                             <constraint firstAttribute="height" constant="50" id="vQE-1J-7Jj"/>
                                         </constraints>

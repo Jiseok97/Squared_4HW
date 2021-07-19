@@ -22,8 +22,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-mc-12K">
                                         <rect key="frame" x="10" y="10" width="105" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmf-vS-0nz">
-                                                <rect key="frame" x="25" y="14" width="35" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmf-vS-0nz">
+                                                <rect key="frame" x="25" y="14" width="49" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -119,14 +119,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="패 시 브" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzW-Hq-Lm7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="패 시 브 통장 이자" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzW-Hq-Lm7">
                                                 <rect key="frame" x="10" y="10" width="140" height="83"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="sCZ-Hp-vfF" firstAttribute="top" secondItem="tzW-Hq-Lm7" secondAttribute="bottom" constant="10" id="5t8-bU-OOC"/>
                                             <constraint firstItem="tzW-Hq-Lm7" firstAttribute="leading" secondItem="qm2-7T-KGt" secondAttribute="leading" constant="10" id="IC2-2w-kSd"/>
@@ -141,9 +141,31 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-JZ-COS">
                                         <rect key="frame" x="200" y="17" width="194" height="136"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8Z-sb-PMs">
+                                                <rect key="frame" x="10" y="10" width="174" height="83"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <state key="normal" title="전단지 알바">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💵 + 50$ / m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-AD-ZhF">
+                                                <rect key="frame" x="10" y="103" width="174" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="1Fq-AD-ZhF" firstAttribute="leading" secondItem="nIx-JZ-COS" secondAttribute="leading" constant="10" id="69t-Dw-C3X"/>
+                                            <constraint firstItem="1Fq-AD-ZhF" firstAttribute="top" secondItem="O8Z-sb-PMs" secondAttribute="bottom" constant="10" id="8Jn-n8-y8a"/>
+                                            <constraint firstItem="O8Z-sb-PMs" firstAttribute="top" secondItem="nIx-JZ-COS" secondAttribute="top" constant="10" id="9Ui-r4-o4d"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Fq-AD-ZhF" secondAttribute="trailing" constant="10" id="Bl7-fX-cAa"/>
+                                            <constraint firstItem="O8Z-sb-PMs" firstAttribute="leading" secondItem="nIx-JZ-COS" secondAttribute="leading" constant="10" id="ML2-6e-PJN"/>
                                             <constraint firstAttribute="height" constant="136" id="iZF-oR-6oH"/>
+                                            <constraint firstAttribute="trailing" secondItem="O8Z-sb-PMs" secondAttribute="trailing" constant="10" id="poQ-dI-dAr"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Fq-AD-ZhF" secondAttribute="bottom" constant="10" id="zdb-cR-eN9"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDF-nQ-z02">
@@ -202,11 +224,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activeExplainLbl" destination="1Fq-AD-ZhF" id="s8D-mE-FJ7"/>
+                        <outlet property="activeSkillBtn" destination="O8Z-sb-PMs" id="aCp-Uu-7zZ"/>
                         <outlet property="characterImg" destination="Vk3-xA-Xrs" id="oJE-vH-jr3"/>
+                        <outlet property="explainLbl" destination="tzW-Hq-Lm7" id="Pli-x1-Jly"/>
                         <outlet property="firstSkillView" destination="qm2-7T-KGt" id="dNg-M2-7su"/>
                         <outlet property="headView" destination="agZ-Vg-A1N" id="nSL-bo-BOX"/>
                         <outlet property="levleTextLbl" destination="Rmf-vS-0nz" id="7fO-IK-Sm2"/>
                         <outlet property="moneyLbl" destination="Ubo-bn-WpM" id="nlU-fU-kOx"/>
+                        <outlet property="passiveLbl" destination="sCZ-Hp-vfF" id="Dkh-0z-1jv"/>
+                        <outlet property="secondSkillView" destination="nIx-JZ-COS" id="Rc6-rq-0AP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -221,9 +248,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -113,7 +113,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qm2-7T-KGt">
                                         <rect key="frame" x="20" y="17" width="160" height="136"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="💵 + 1$ / s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCZ-Hp-vfF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="💵 + 1$ / 1초" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCZ-Hp-vfF">
                                                 <rect key="frame" x="10" y="103" width="140" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -149,7 +149,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💵 + 100$ / 10s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-AD-ZhF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💵 + 100$ / 10초" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-AD-ZhF">
                                                 <rect key="frame" x="0.0" y="103" width="194" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -170,17 +170,61 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDF-nQ-z02">
                                         <rect key="frame" x="20" y="169" width="160" height="139"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neG-On-hEt">
+                                                <rect key="frame" x="10" y="10" width="140" height="70.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <state key="normal" title="비트코인">
+                                                    <color key="titleColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💵 - 3000 💵 + ??$ / 3분" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVt-L4-gBl">
+                                                <rect key="frame" x="10" y="90.5" width="140" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
+                                            <constraint firstItem="pVt-L4-gBl" firstAttribute="leading" secondItem="xDF-nQ-z02" secondAttribute="leading" constant="10" id="3a7-1s-lRg"/>
                                             <constraint firstAttribute="width" constant="160" id="IPl-97-SkM"/>
+                                            <constraint firstItem="neG-On-hEt" firstAttribute="top" secondItem="xDF-nQ-z02" secondAttribute="top" constant="10" id="S5v-sf-i5h"/>
                                             <constraint firstAttribute="height" constant="139" id="UHQ-cP-i8e"/>
+                                            <constraint firstAttribute="bottom" secondItem="pVt-L4-gBl" secondAttribute="bottom" constant="10" id="g8a-QP-geZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="neG-On-hEt" secondAttribute="trailing" constant="10" id="iKu-Js-ZEN"/>
+                                            <constraint firstAttribute="trailing" secondItem="pVt-L4-gBl" secondAttribute="trailing" constant="10" id="jeS-eV-rtl"/>
+                                            <constraint firstItem="neG-On-hEt" firstAttribute="leading" secondItem="xDF-nQ-z02" secondAttribute="leading" constant="10" id="kUL-OU-KDh"/>
+                                            <constraint firstItem="pVt-L4-gBl" firstAttribute="top" secondItem="neG-On-hEt" secondAttribute="bottom" constant="10" id="ykr-dH-BoE"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-Dg-iE3">
                                         <rect key="frame" x="202" y="169" width="192" height="139"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73H-tq-Nru">
+                                                <rect key="frame" x="10" y="10" width="172" height="86"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <state key="normal" title="기 부 천 사">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💵 + ? $ / 10분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H59-fp-gy1">
+                                                <rect key="frame" x="10" y="106" width="172" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="H59-fp-gy1" firstAttribute="top" secondItem="73H-tq-Nru" secondAttribute="bottom" constant="10" id="06f-w4-3an"/>
+                                            <constraint firstAttribute="bottom" secondItem="H59-fp-gy1" secondAttribute="bottom" constant="10" id="4Hr-HA-X90"/>
+                                            <constraint firstItem="73H-tq-Nru" firstAttribute="top" secondItem="Hj6-Dg-iE3" secondAttribute="top" constant="10" id="5AG-lX-edL"/>
+                                            <constraint firstItem="73H-tq-Nru" firstAttribute="leading" secondItem="Hj6-Dg-iE3" secondAttribute="leading" constant="10" id="U3q-MW-8zm"/>
                                             <constraint firstAttribute="height" constant="139" id="Vh9-m5-vWc"/>
+                                            <constraint firstItem="H59-fp-gy1" firstAttribute="leading" secondItem="Hj6-Dg-iE3" secondAttribute="leading" constant="10" id="gdb-Qs-VAh"/>
+                                            <constraint firstAttribute="trailing" secondItem="H59-fp-gy1" secondAttribute="trailing" constant="10" id="rBu-PQ-w4I"/>
+                                            <constraint firstAttribute="trailing" secondItem="73H-tq-Nru" secondAttribute="trailing" constant="10" id="tUp-eY-tag"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -225,9 +269,13 @@
                     </view>
                     <connections>
                         <outlet property="activeExplainLbl" destination="1Fq-AD-ZhF" id="s8D-mE-FJ7"/>
+                        <outlet property="activeSecondBtn" destination="neG-On-hEt" id="ydk-2z-n2s"/>
                         <outlet property="activeSkillBtn" destination="O8Z-sb-PMs" id="aCp-Uu-7zZ"/>
+                        <outlet property="activeThirdBtn" destination="73H-tq-Nru" id="BUb-I5-AoA"/>
                         <outlet property="characterImg" destination="Vk3-xA-Xrs" id="oJE-vH-jr3"/>
                         <outlet property="explainLbl" destination="tzW-Hq-Lm7" id="Pli-x1-Jly"/>
+                        <outlet property="explainSecondLbl" destination="pVt-L4-gBl" id="RlT-hZ-Xm9"/>
+                        <outlet property="explainThirdLbl" destination="H59-fp-gy1" id="ZPp-TW-354"/>
                         <outlet property="firstSkillView" destination="qm2-7T-KGt" id="dNg-M2-7su"/>
                         <outlet property="fourthSkillView" destination="Hj6-Dg-iE3" id="AOG-vi-miT"/>
                         <outlet property="headView" destination="agZ-Vg-A1N" id="nSL-bo-BOX"/>
@@ -255,6 +303,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

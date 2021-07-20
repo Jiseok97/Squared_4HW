@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Casino View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="casinoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="casinoViewController" customModule="lifeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casinoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1tG-a4-LH8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="208.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casino01" translatesAutoresizingMaskIntoConstraints="NO" id="vDN-yl-jXa">
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="4n1-1R-uaC"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-tX-VW2">
+                                <rect key="frame" x="20" y="267.5" width="374" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHr-mY-KJj">
+                                        <rect key="frame" x="15" y="20" width="279" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhm-9a-oZs">
+                                        <rect key="frame" x="303" y="22" width="63" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="배팅하기">
+                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.027450980390000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XHr-mY-KJj" secondAttribute="bottom" constant="21" id="BZQ-BR-CVH"/>
+                                    <constraint firstAttribute="height" constant="75" id="Brg-oH-XOU"/>
+                                    <constraint firstItem="XHr-mY-KJj" firstAttribute="top" secondItem="CYv-tX-VW2" secondAttribute="top" constant="20" symbolic="YES" id="HVn-L2-Uct"/>
+                                    <constraint firstAttribute="trailing" secondItem="qhm-9a-oZs" secondAttribute="trailing" constant="8" id="NvV-nI-tRX"/>
+                                    <constraint firstItem="qhm-9a-oZs" firstAttribute="top" secondItem="CYv-tX-VW2" secondAttribute="top" constant="22" id="PkW-6C-up0"/>
+                                    <constraint firstAttribute="bottom" secondItem="qhm-9a-oZs" secondAttribute="bottom" constant="23" id="jg8-Mi-nbF"/>
+                                    <constraint firstItem="XHr-mY-KJj" firstAttribute="leading" secondItem="CYv-tX-VW2" secondAttribute="leading" constant="15" id="mPC-LK-mba"/>
+                                    <constraint firstItem="qhm-9a-oZs" firstAttribute="leading" secondItem="XHr-mY-KJj" secondAttribute="trailing" constant="9" id="run-1r-0Ze"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOD-WS-Wgj">
+                                <rect key="frame" x="10" y="767.5" width="394" height="104.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저희 카지노는 어떠한 결과에도 보상을 하지 않습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyP-xs-pXY">
+                                        <rect key="frame" x="30" y="5" width="334" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88X-YH-CQB">
+                                        <rect key="frame" x="80" y="49" width="234" height="25"/>
+                                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="WzC-aM-Naf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="나가기">
+                                            <color key="titleColor" systemColor="systemYellowColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exit:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A2x-Dv-jVD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.027450980390000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="88X-YH-CQB" firstAttribute="leading" secondItem="tOD-WS-Wgj" secondAttribute="leading" constant="80" id="8ka-5r-FLa"/>
+                                    <constraint firstItem="88X-YH-CQB" firstAttribute="top" secondItem="gyP-xs-pXY" secondAttribute="bottom" constant="3" id="KKF-As-TgF"/>
+                                    <constraint firstItem="gyP-xs-pXY" firstAttribute="leading" secondItem="tOD-WS-Wgj" secondAttribute="leading" constant="30" id="KeH-Xp-KHH"/>
+                                    <constraint firstItem="gyP-xs-pXY" firstAttribute="top" secondItem="tOD-WS-Wgj" secondAttribute="top" constant="5" id="Qaa-3j-ng2"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyP-xs-pXY" secondAttribute="trailing" constant="30" id="bEu-t9-UTo"/>
+                                    <constraint firstAttribute="trailing" secondItem="88X-YH-CQB" secondAttribute="trailing" constant="80" id="uqr-GU-4xK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="CYv-tX-VW2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="7eh-Fh-iCP"/>
+                            <constraint firstItem="tOD-WS-Wgj" firstAttribute="top" secondItem="vDN-yl-jXa" secondAttribute="bottom" constant="10" id="8s8-lN-du3"/>
+                            <constraint firstItem="vDN-yl-jXa" firstAttribute="top" secondItem="CYv-tX-VW2" secondAttribute="bottom" constant="15" id="9B2-dg-fEs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tOD-WS-Wgj" secondAttribute="trailing" constant="10" id="Byc-QC-7OP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CYv-tX-VW2" secondAttribute="trailing" constant="20" id="Ns9-6m-KkQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1tG-a4-LH8" secondAttribute="trailing" id="T1S-2J-QoQ"/>
+                            <constraint firstItem="CYv-tX-VW2" firstAttribute="top" secondItem="1tG-a4-LH8" secondAttribute="bottom" constant="15" id="Tzb-Ix-Lk1"/>
+                            <constraint firstItem="vDN-yl-jXa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XGj-Jv-2Yn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vDN-yl-jXa" secondAttribute="trailing" id="clC-af-Tn1"/>
+                            <constraint firstItem="1tG-a4-LH8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fYg-LC-Hqp"/>
+                            <constraint firstItem="1tG-a4-LH8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gki-UX-arr"/>
+                            <constraint firstItem="tOD-WS-Wgj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="si0-bS-Qgz"/>
+                            <constraint firstItem="tOD-WS-Wgj" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="10" id="uHx-3H-Pgc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="36.830357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="casino01" width="256" height="170"/>
+        <image name="casinoLogo" width="313" height="208.5"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

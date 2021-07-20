@@ -6,6 +6,7 @@
 //
 
 // MARK: 각 액티브 버튼마다 시간 제한 확인하기 !
+// 동 -> 은 갈 때, 비트코인 버튼 초기화
 
 
 import UIKit
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var levleTextLbl: UILabel!
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
-    var money : Int = 13000
+    var money : Int = 15000
     
     
     
@@ -107,6 +108,8 @@ class ViewController: UIViewController {
                     self.activeSkillBtn.addTarget(self, action: #selector(self.firstButtonTapped), for: .touchUpInside)
                     // 액티브 버튼 2
                     self.activeSecondBtn.addTarget(self, action: #selector(self.secondButtonTapped), for: .touchUpInside)
+                    // 액티브 버튼 3
+                    self.activeThirdBtn.addTarget(self, action: #selector(self.thirdButtonTapped), for: .touchUpInside)
                 }
             }
         }
@@ -207,7 +210,10 @@ class ViewController: UIViewController {
                 
                 // 액티브 1
                 self.activeSkillBtn.setTitle("월세 올리기", for: .normal)
-                self.activeExplainLbl.text = "💵 + 3000$ / 10초"
+                self.activeExplainLbl.text = "💵 + 3000$/10초"
+                
+                // 액티브 3
+                self.forHihgLevel()
             }
         }
     }
@@ -238,7 +244,6 @@ class ViewController: UIViewController {
         self.activeSkillBtn.isEnabled = false
         self.activeSkillBtn.tintColor = .systemGray
         self.activeSkillBtn.setTitleColor(.lightGray, for: .normal)
-        self.activeSkillBtn.backgroundColor = .systemGray
         self.secondSkillView.backgroundColor = .systemGray
         self.activeExplainLbl.textColor = .lightGray
     }
@@ -246,7 +251,6 @@ class ViewController: UIViewController {
     func afterClickFirstBtn()
     {
         self.secondSkillView.backgroundColor = .white
-        self.activeSkillBtn.backgroundColor = .white
         self.activeSkillBtn.setTitleColor(.black, for: .normal)
         self.activeExplainLbl.textColor = .black
         self.activeSkillBtn.isEnabled = true
@@ -283,7 +287,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    // MARK: 버튼 클릭시
+    // MARK: 액티브 버튼 2 클릭
     func clickSecondBtn() {
         self.activeSecondBtn.isEnabled = false
         self.money -= 3000
@@ -293,7 +297,7 @@ class ViewController: UIViewController {
         self.explainSecondLbl.text = "떡상 or 떡락"
         self.explainSecondLbl.textColor = .lightGray
     }
-    // MARK: 버튼 비활성화 UIColor
+    // MARK: 액티브 버튼 2 비활성화 UIColor
     // 흙/동수저인 경우, 아예 비활성화
     func cantSecondBtn() {
         self.activeSecondBtn.isEnabled = false
@@ -303,7 +307,7 @@ class ViewController: UIViewController {
         self.explainSecondLbl.text = "은수저 이상"
         self.explainSecondLbl.textColor = .lightGray
     }
-    // MARK: 버튼 활성화 UIColor
+    // MARK: 액티브 버튼 2 활성화 UIColor
     // 비활성화 상태에서 시간이 지나고 다시 UI 바꿔주기
     func setSecondBtn() {
         self.thirdSkillView.backgroundColor = .systemYellow
@@ -313,7 +317,7 @@ class ViewController: UIViewController {
         self.explainSecondLbl.textColor = .magenta
         self.activeSecondBtn.isEnabled = true
     }
-    // MARK: 액티브 비트코인
+    // MARK: 액티브 버튼 2 비트코인
     func bitCoinFunction()
     {
         let num = arc4random_uniform(10000)
@@ -328,21 +332,61 @@ class ViewController: UIViewController {
     @objc func thirdButtonTapped() {
         DispatchQueue.global(qos: .background).async {
             DispatchQueue.main.async {
-                self.clickFirstBtn()
+                self.clickThirdBtn()
             }
             usleep(5000000)
             DispatchQueue.main.async {
-                self.difFirstMoney()
-                self.afterClickFirstBtn()
+                self.setFourthView()
                 
             }
         }
     }
-    
-    // MARK: Level에 따른 패널티
-    func givePenalty() {
-        
+    // MARK: 액티브 버튼 3 클릭
+    func clickThirdBtn() {
+        self.activeThirdBtn.isEnabled = false
+        self.fourthSkillView.backgroundColor = .darkGray
+        self.activeThirdBtn.setTitle("앗싸~", for: .normal)
+        self.activeThirdBtn.setTitleColor(.lightGray, for: .normal)
+        self.explainThirdLbl.text = "기부금 받았다!"
+        self.explainThirdLbl.textColor = .lightGray
+        self.difFunction()
     }
     
+    // MARK: Level 차별화 기능
+    func difFunction() {
+        if (self.levleTextLbl.text == "흙수저") {
+            self.money += Int(arc4random_uniform(1500))
+        }
+        else if (self.levleTextLbl.text == "동수저") {
+            self.money += Int(arc4random_uniform(2500))
+        }
+        else if (self.levleTextLbl.text == "은수저") {
+            self.money += Int(arc4random_uniform(3500))
+        }
+        else if (self.levleTextLbl.text == "금수저") {
+            let storyboard: UIStoryboard = UIStoryboard(name: "casino", bundle: nil)
+            let nextView = storyboard.instantiateInitialViewController()
+            present(nextView!, animated: true, completion: nil)
+            
+        }
+    }
+    // MARK: 액티브 버튼3 원상복귀
+    func setFourthView() {
+        self.fourthSkillView.backgroundColor = .systemTeal
+        self.activeThirdBtn.setTitle("기 부 천 사", for: .normal)
+        self.activeThirdBtn.setTitleColor(.white, for: .normal)
+        self.explainThirdLbl.text = "💵 + ? $ / 10분"
+        self.explainThirdLbl.textColor = .white
+        self.activeThirdBtn.isEnabled = true
+    }
+    
+    // MARK: 금수저 전용 UIView
+    func forHihgLevel() {
+        self.fourthSkillView.backgroundColor = .black
+        self.activeThirdBtn.setTitle("카 지 노", for: .normal)
+        self.activeThirdBtn.setTitleColor(.systemRed, for: .normal)
+        self.explainThirdLbl.text = "모 아니면 도"
+        self.explainThirdLbl.textColor = .systemYellow
+    }
     
 }

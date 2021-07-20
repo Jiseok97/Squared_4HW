@@ -15,6 +15,8 @@
 		B626AEC626A5392D002ECD4D /* lifeGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626AEC526A5392D002ECD4D /* lifeGameTests.swift */; };
 		B626AED126A5392E002ECD4D /* lifeGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626AED026A5392E002ECD4D /* lifeGameUITests.swift */; };
 		B6F545E026A55A3A008C6727 /* imageFile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F545DF26A55A3A008C6727 /* imageFile.xcassets */; };
+		B6F919AA26A6C7740014272B /* casino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F919A926A6C7740014272B /* casino.storyboard */; };
+		B6F919AC26A6C7880014272B /* casinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F919AB26A6C7880014272B /* casinoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B626AED026A5392E002ECD4D /* lifeGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifeGameUITests.swift; sourceTree = "<group>"; };
 		B626AED226A5392E002ECD4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6F545DF26A55A3A008C6727 /* imageFile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = imageFile.xcassets; sourceTree = "<group>"; };
+		B6F919A926A6C7740014272B /* casino.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = casino.storyboard; sourceTree = "<group>"; };
+		B6F919AB26A6C7880014272B /* casinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casinoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,11 @@
 		B626AEAD26A5392D002ECD4D /* lifeGame */ = {
 			isa = PBXGroup;
 			children = (
+				B6F919AE26A6C79B0014272B /* Storyboard */,
+				B6F919AD26A6C78E0014272B /* ViewController */,
 				B6F545DF26A55A3A008C6727 /* imageFile.xcassets */,
 				B626AEAE26A5392D002ECD4D /* AppDelegate.swift */,
 				B626AEB026A5392D002ECD4D /* SceneDelegate.swift */,
-				B626AEB226A5392D002ECD4D /* ViewController.swift */,
-				B626AEB426A5392D002ECD4D /* Main.storyboard */,
-				B626AEB926A5392D002ECD4D /* LaunchScreen.storyboard */,
 				B626AEBC26A5392D002ECD4D /* Info.plist */,
 			);
 			path = lifeGame;
@@ -126,6 +129,25 @@
 				B626AED226A5392E002ECD4D /* Info.plist */,
 			);
 			path = lifeGameUITests;
+			sourceTree = "<group>";
+		};
+		B6F919AD26A6C78E0014272B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B626AEB226A5392D002ECD4D /* ViewController.swift */,
+				B6F919AB26A6C7880014272B /* casinoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B6F919AE26A6C79B0014272B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B626AEB426A5392D002ECD4D /* Main.storyboard */,
+				B626AEB926A5392D002ECD4D /* LaunchScreen.storyboard */,
+				B6F919A926A6C7740014272B /* casino.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B626AEBB26A5392D002ECD4D /* LaunchScreen.storyboard in Resources */,
+				B6F919AA26A6C7740014272B /* casino.storyboard in Resources */,
 				B626AEB626A5392D002ECD4D /* Main.storyboard in Resources */,
 				B6F545E026A55A3A008C6727 /* imageFile.xcassets in Resources */,
 			);
@@ -259,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B626AEB326A5392D002ECD4D /* ViewController.swift in Sources */,
+				B6F919AC26A6C7880014272B /* casinoViewController.swift in Sources */,
 				B626AEAF26A5392D002ECD4D /* AppDelegate.swift in Sources */,
 				B626AEB126A5392D002ECD4D /* SceneDelegate.swift in Sources */,
 			);

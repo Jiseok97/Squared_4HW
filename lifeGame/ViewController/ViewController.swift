@@ -11,7 +11,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, sendMoney {
+    
+    func dataSend(fee: Int, get: Int) {
+        self.money -= fee
+        self.money += get
+    }
+    
+    
     // MARK: Header UIViews
     @IBOutlet weak var headView: UIView!
     @IBOutlet weak var levelView: UIView!
@@ -26,7 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var levleTextLbl: UILabel!
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
-    var money : Int = 15000
+    var money : Int = 16000
     
     
     
@@ -36,6 +43,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var explainLbl: UILabel!
     @IBOutlet weak var passiveLbl: UILabel!
     
+
     
     // MARK: 액티브 기능1 UIView
     @IBOutlet weak var secondSkillView: UIView!
@@ -146,11 +154,12 @@ class ViewController: UIViewController {
     // MARK: LEVEL마다 UI & 패시브 차별화
     func passiveSkill()
     {
+        
         DispatchQueue.main.async {
             
             if (self.levleTextLbl.text == "흙수저") {
                 self.money += 1
-                self.explainLbl.text = "패 시 브\n돈 줍기"
+                self.explainLbl.text = "패 시 브\n폐지 줍기"
                 self.firstSkillView.backgroundColor = .brown
                 self.passiveLbl.text = "💵 + 1$ / 1초"
                 self.passiveLbl.textColor = .black
@@ -363,11 +372,19 @@ class ViewController: UIViewController {
         else if (self.levleTextLbl.text == "은수저") {
             self.money += Int(arc4random_uniform(3500))
         }
+        
+        // MARK: casino 뷰컨 넘어가기
         else if (self.levleTextLbl.text == "금수저") {
             let storyboard: UIStoryboard = UIStoryboard(name: "casino", bundle: nil)
-            let nextView = storyboard.instantiateInitialViewController()
-            present(nextView!, animated: true, completion: nil)
+            guard let nextView = storyboard.instantiateViewController(identifier: "casinoViewController") as? casinoViewController else {fatalError()}
+            nextView.delegate = self
+            present(nextView, animated: true, completion: nil)
             
+            
+//            let sb = UIStoryboard(name: "casino", bundle: nil)
+//            guard let nextVC = sb.instantiateViewController(identifier: "casinoViewController") as? casinoViewController else { fatalError() }
+//            nextVC.delegate = self
+//            navigationController?.pushViewController(nextVC, animated: true)
         }
     }
     // MARK: 액티브 버튼3 원상복귀

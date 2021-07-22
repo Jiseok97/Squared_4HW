@@ -28,6 +28,7 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var midView: UIView!
     // Character Background
     @IBOutlet weak var charBgImage: UIImageView!
+    @IBOutlet weak var helpBtn: UIButton!
     
     
     
@@ -424,5 +425,15 @@ class ViewController: UIViewController, sendMoney {
         self.explainThirdLbl.font = UIFont.boldSystemFont(ofSize: 30)
         self.explainThirdLbl.textColor = .black
     }
+    
+    
+    
+    
+    @IBAction func helpActBtn(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
+        guard let nextView = storyboard.instantiateViewController(identifier: "HelpViewController") as? HelpViewController else {fatalError()}
+        present(nextView, animated: true, completion: nil)
+    }
+    
     
 }

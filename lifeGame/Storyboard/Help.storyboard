@@ -15,13 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-z0-nF3">
+                                <rect key="frame" x="5" y="49" width="404" height="783"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="80f-2o-ZNh">
+                                <rect key="frame" x="5" y="832" width="404" height="28"/>
+                                <connections>
+                                    <action selector="changePage:" destination="Y6W-OH-hqX" eventType="valueChanged" id="VtX-3w-yWf"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="80f-2o-ZNh" secondAttribute="trailing" constant="5" id="2I4-uW-aPi"/>
+                            <constraint firstItem="GCE-z0-nF3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="3DW-js-0bb"/>
+                            <constraint firstItem="80f-2o-ZNh" firstAttribute="top" secondItem="GCE-z0-nF3" secondAttribute="bottom" id="3xX-7B-oY9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GCE-z0-nF3" secondAttribute="bottom" constant="30" id="8fe-t6-lgP"/>
+                            <constraint firstItem="GCE-z0-nF3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="F6V-fQ-NC7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GCE-z0-nF3" secondAttribute="trailing" constant="5" id="P81-VR-b1z"/>
+                            <constraint firstItem="80f-2o-ZNh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="w9A-R5-keF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="GCE-z0-nF3" id="jzu-2b-58x"/>
+                        <outlet property="pageControl" destination="80f-2o-ZNh" id="tnP-gj-VK0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="10"/>
+            <point key="canvasLocation" x="128.98550724637681" y="9.375"/>
         </scene>
     </scenes>
     <resources>

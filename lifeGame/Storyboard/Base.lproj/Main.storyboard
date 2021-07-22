@@ -80,6 +80,9 @@
                                                 <state key="normal" title="도 움 말">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="helpActBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uNy-GG-l3f"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -317,6 +320,7 @@
                         <outlet property="firstSkillView" destination="qm2-7T-KGt" id="dNg-M2-7su"/>
                         <outlet property="fourthSkillView" destination="Hj6-Dg-iE3" id="AOG-vi-miT"/>
                         <outlet property="headView" destination="agZ-Vg-A1N" id="nSL-bo-BOX"/>
+                        <outlet property="helpBtn" destination="X6A-U8-YgA" id="Ekb-Ha-Krc"/>
                         <outlet property="levelView" destination="CcR-mc-12K" id="ev7-pr-TU4"/>
                         <outlet property="levleTextLbl" destination="Rmf-vS-0nz" id="7fO-IK-Sm2"/>
                         <outlet property="marketView" destination="PCo-EU-UWm" id="hql-CC-27G"/>

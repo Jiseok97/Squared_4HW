@@ -16,17 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6b-6c-tym">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="QDw-Kc-MLk"/>
+                                    <constraint firstAttribute="height" constant="100" id="QDw-Kc-MLk"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="iuZ-i7-dzp">
+                                <rect key="frame" x="-15" y="194" width="439" height="518"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tK-ty-i8f">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.89411764709999997" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MBA-wP-R3p"/>
+                                    <constraint firstAttribute="height" constant="100" id="MBA-wP-R3p"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lauchImg" translatesAutoresizingMaskIntoConstraints="NO" id="WQj-Vb-6Jh">
@@ -36,12 +39,6 @@
                                     <constraint firstAttribute="height" constant="160" id="pFL-Or-aei"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by 아요쓰" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XJ-tl-yh0">
-                                <rect key="frame" x="308.5" y="738" width="67" height="20.5"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,21 +47,24 @@
                             <constraint firstItem="WQj-Vb-6Jh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BWu-J8-tC8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g6b-6c-tym" secondAttribute="trailing" id="BxE-Cc-pA4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7tK-ty-i8f" secondAttribute="bottom" id="Cpo-Ck-h39"/>
-                            <constraint firstItem="8XJ-tl-yh0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="300" id="Pcg-Az-BfI"/>
+                            <constraint firstItem="iuZ-i7-dzp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-15" id="OKg-9F-AQb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iuZ-i7-dzp" secondAttribute="bottom" constant="150" id="R4f-Dk-ctu"/>
+                            <constraint firstItem="iuZ-i7-dzp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="RTC-sA-CuT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7tK-ty-i8f" secondAttribute="trailing" id="Vy4-vD-5aL"/>
                             <constraint firstItem="g6b-6c-tym" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eiV-8b-acx"/>
+                            <constraint firstItem="iuZ-i7-dzp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="10" id="gx2-Ac-K8X"/>
                             <constraint firstItem="7tK-ty-i8f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ixm-Cs-ggP"/>
-                            <constraint firstItem="8XJ-tl-yh0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="135" id="n4e-PK-H5Z"/>
                             <constraint firstItem="WQj-Vb-6Jh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rO4-y7-QGa"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="circle" width="325" height="325"/>
         <image name="lauchImg" width="481" height="230"/>
     </resources>
 </document>

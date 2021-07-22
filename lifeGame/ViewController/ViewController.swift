@@ -26,6 +26,8 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var moneyView: UIView!
     // Mid View
     @IBOutlet weak var midView: UIView!
+    // Character Background
+    @IBOutlet weak var charBgImage: UIImageView!
     
     
     
@@ -34,7 +36,7 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var levleTextLbl: UILabel!
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
-    var money : Int = 0001
+    var money : Int = 16001
     var richCnt : Int = 0
     
     
@@ -89,6 +91,8 @@ class ViewController: UIViewController, sendMoney {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.characterImg.layer.zPosition = 999
+        self.charBgImage.layer.zPosition = 0
         setRadius()
         gameStart()
     }
@@ -136,28 +140,32 @@ class ViewController: UIViewController, sendMoney {
     {
         if (self.money <= 5000) {
             self.levleTextLbl.text = "흙수저"
-            self.characterImg.image = UIImage(named: "level1")
+            self.characterImg.image = UIImage(named: "level01")
+            self.charBgImage.image = UIImage(named: "bgImglevel1")
             self.passiveImg.image = UIImage(named: "oldPaper")
             self.activeImg.image = UIImage(named: "plzImg")
             self.activeSecondImg.image = UIImage(named: "subWay")
         }
         else if (self.money > 5000 && self.money <= 10000) {
             self.levleTextLbl.text = "동수저"
-            self.characterImg.image = UIImage(named: "level2")
+            self.characterImg.image = UIImage(named: "level02")
+            self.charBgImage.image = UIImage(named: "bgImgLevel2")
             self.passiveImg.image = UIImage(named: "bankPaper")
             self.activeImg.image = UIImage(named: "partTime")
             self.activeSecondImg.image = UIImage(named: "teach")
         }
         else if (self.money > 10000 && self.money <= 15000) {
             self.levleTextLbl.text = "은수저"
-            self.characterImg.image = UIImage(named: "level3")
+            self.characterImg.image = UIImage(named: "level03")
+            self.charBgImage.image = UIImage(named: "bgImgLevel3")
             self.passiveImg.image = UIImage(named: "payday")
             self.activeImg.image = UIImage(named: "nightWork")
             self.activeSecondImg.image = UIImage(named: "twoJob")
         }
         else if (self.money > 15000){
             self.levleTextLbl.text = "금수저"
-            self.characterImg.image = UIImage(named: "level4")
+            self.characterImg.image = UIImage(named: "level04")
+            self.charBgImage.image = UIImage(named: "bgImgLevel4")
             self.passiveImg.image = UIImage(named: "breath")
             self.activeImg.image = UIImage(named: "building")
             self.activeSecondImg.image = UIImage(named: "buildingUpgrade")
@@ -194,8 +202,8 @@ class ViewController: UIViewController, sendMoney {
             else if (self.levleTextLbl.text == "동수저") {
                 self.money += 10
                 self.paasiveNameLbl.text = "통장 이자"
-                self.headView.backgroundColor = .brown
-                self.midView.backgroundColor = .brown
+                self.headView.backgroundColor =  UIColor(displayP3Red: 246/255, green: 228/255, blue: 210/255, alpha: 1)
+                self.midView.backgroundColor =  UIColor(displayP3Red: 246/255, green: 228/255, blue: 210/255, alpha: 1)
                 self.levleTextLbl.textColor = .brown
                 self.passiveLbl.text = "💵 + 10$ / 1초"
                 
@@ -214,8 +222,8 @@ class ViewController: UIViewController, sendMoney {
                 self.money += 150
                 self.paasiveNameLbl.text = "월 급"
                 self.levleTextLbl.textColor = .systemGray
-                self.headView.backgroundColor = .darkGray
-                self.midView.backgroundColor = .darkGray
+                self.headView.backgroundColor = UIColor(displayP3Red: 30/255, green: 48/255, blue: 75/255, alpha: 1)
+                self.midView.backgroundColor = UIColor(displayP3Red: 30/255, green: 48/255, blue: 75/255, alpha: 1)
                 
                 self.passiveLbl.text = "💵 + 150$ / 1초"
                 
@@ -235,8 +243,8 @@ class ViewController: UIViewController, sendMoney {
                 self.setRich()
                 self.paasiveNameLbl.text = "숨 쉬 기"
                 self.levleTextLbl.textColor = .systemYellow
-                self.headView.backgroundColor = .black
-                self.midView.backgroundColor = .black
+                self.headView.backgroundColor = UIColor(displayP3Red: 30/255, green: 48/255, blue: 75/255, alpha: 1)
+                self.midView.backgroundColor = UIColor(displayP3Red: 30/255, green: 48/255, blue: 75/255, alpha: 1)
                 self.passiveLbl.text = "💵 + 500$/1초"
                 
                 // 액티브 1
@@ -263,7 +271,7 @@ class ViewController: UIViewController, sendMoney {
     
     // MARK: Toast Message
     func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height - 65, width: 190, height: 45))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 90, y: self.view.frame.size.height - 65, width: 190, height: 45))
         
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.systemBlue

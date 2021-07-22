@@ -16,6 +16,7 @@ class ViewController: UIViewController, sendMoney {
     func dataSend(fee: Int, get: Int) {
         self.money -= fee
         self.money += get
+        self.showToast(message: "💵 + \(get)$")
     }
     
     
@@ -33,7 +34,7 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var levleTextLbl: UILabel!
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
-    var money : Int = 16001
+    var money : Int = 0001
     var richCnt : Int = 0
     
     
@@ -56,6 +57,7 @@ class ViewController: UIViewController, sendMoney {
     
     // MARK: 액티브 기능2 UIView
     @IBOutlet weak var thirdSkillView: UIView!
+    @IBOutlet weak var activeSecondImg: UIImageView!
     @IBOutlet weak var activeSecondBtn: UIButton!
     @IBOutlet weak var explainSecondLbl: UILabel!
     
@@ -63,6 +65,7 @@ class ViewController: UIViewController, sendMoney {
     
     // MARK: 액티브 기능3 UIView
     @IBOutlet weak var fourthSkillView: UIView!
+    @IBOutlet weak var casinoImg: UIImageView!
     @IBOutlet weak var activeThirdBtn: UIButton!
     @IBOutlet weak var explainThirdLbl: UILabel!
     
@@ -136,33 +139,35 @@ class ViewController: UIViewController, sendMoney {
             self.characterImg.image = UIImage(named: "level1")
             self.passiveImg.image = UIImage(named: "oldPaper")
             self.activeImg.image = UIImage(named: "plzImg")
-            self.cantSecondBtn()
+            self.activeSecondImg.image = UIImage(named: "subWay")
         }
         else if (self.money > 5000 && self.money <= 10000) {
             self.levleTextLbl.text = "동수저"
             self.characterImg.image = UIImage(named: "level2")
             self.passiveImg.image = UIImage(named: "bankPaper")
             self.activeImg.image = UIImage(named: "partTime")
-            
-            self.cantSecondBtn()
+            self.activeSecondImg.image = UIImage(named: "teach")
         }
         else if (self.money > 10000 && self.money <= 15000) {
             self.levleTextLbl.text = "은수저"
             self.characterImg.image = UIImage(named: "level3")
             self.passiveImg.image = UIImage(named: "payday")
             self.activeImg.image = UIImage(named: "nightWork")
-            
+            self.activeSecondImg.image = UIImage(named: "twoJob")
         }
         else if (self.money > 15000){
             self.levleTextLbl.text = "금수저"
             self.characterImg.image = UIImage(named: "level4")
+            self.passiveImg.image = UIImage(named: "breath")
+            self.activeImg.image = UIImage(named: "building")
+            self.activeSecondImg.image = UIImage(named: "buildingUpgrade")
         }
     }
 
     
     
     
-    // MARK: LEVEL마다 UI & 패시브 차별화
+    // MARK: LEVEL 차별화
     func passiveSkill()
     {
         
@@ -178,7 +183,10 @@ class ViewController: UIViewController, sendMoney {
                 // 액티브 1
                 self.activeSkillBtn.setTitle("구   걸", for: .normal)
                 self.activeExplainLbl.text = "💵 + 100$ / 10초"
-
+                
+                // 액티브 2
+                self.activeSecondBtn.setTitle("전철 구걸", for: .normal)
+                self.explainSecondLbl.text = "💵 + 500$ / 1분"
                 
             }
             
@@ -195,6 +203,10 @@ class ViewController: UIViewController, sendMoney {
                 self.activeSkillBtn.setTitle("아르바이트", for: .normal)
                 self.activeExplainLbl.text = "💵 + 300$ / 10초"
                 
+                // 액티브 2
+                self.activeSecondBtn.setTitle("과 외", for: .normal)
+                self.explainSecondLbl.text = "💵 + 1000$/1분"
+                
             }
             
             
@@ -202,17 +214,20 @@ class ViewController: UIViewController, sendMoney {
                 self.money += 150
                 self.paasiveNameLbl.text = "월 급"
                 self.levleTextLbl.textColor = .systemGray
-                self.headView.backgroundColor = .systemGray4
-                self.midView.backgroundColor = .systemGray4
-                self.secondSkillView.backgroundColor = UIColor(displayP3Red: 1, green: 26, blue: 56, alpha: 0)
+                self.headView.backgroundColor = .darkGray
+                self.midView.backgroundColor = .darkGray
+                
                 self.passiveLbl.text = "💵 + 150$ / 1초"
                 
                 // 액티브 1
-                self.activeSkillBtn.setTitle("야근", for: .normal)
-                self.activeSkillBtn.setTitleColor(.white, for: .normal)
+                self.activeSkillBtn.setTitle("야 근", for: .normal)
                 self.activeExplainLbl.text = "💵 + 750$ / 10초"
-                self.activeExplainLbl.textColor = .white
                 
+                // 액티브 2
+                self.activeSecondBtn.setTitle("투 잡", for: .normal)
+                self.explainSecondLbl.text = "💵 + 3000$/1분"
+                
+               
             }
             
             
@@ -220,16 +235,20 @@ class ViewController: UIViewController, sendMoney {
                 self.setRich()
                 self.paasiveNameLbl.text = "숨 쉬 기"
                 self.levleTextLbl.textColor = .systemYellow
-                self.headView.backgroundColor = .darkGray
-                self.midView.backgroundColor = .darkGray
+                self.headView.backgroundColor = .black
+                self.midView.backgroundColor = .black
                 self.passiveLbl.text = "💵 + 500$/1초"
                 
                 // 액티브 1
                 self.activeSkillBtn.setTitle("건물 올리기", for: .normal)
                 self.activeExplainLbl.text = "💵 - 3000$\n패시브+500$(누적)"
                 
+                // 액티브 2
+                self.activeSecondBtn.setTitle("월세 올리기", for: .normal)
+                self.explainSecondLbl.text = "💵 + 5000$/1분"
+                
                 // 액티브 3
-                self.forHihgLevel()
+                self.forHighLevel()
             }
         }
     }
@@ -240,6 +259,23 @@ class ViewController: UIViewController, sendMoney {
         self.money += 500 + (500 * self.richCnt)
     }
  
+    
+    
+    // MARK: Toast Message
+    func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 14.0)) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height - 65, width: 190, height: 45))
+        
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.systemBlue
+        toastLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 10.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() }) }
+    
     
     // MARK: 액티브 버튼 1 스레드
     @objc func firstButtonTapped() {
@@ -275,16 +311,20 @@ class ViewController: UIViewController, sendMoney {
     func difFirstMoney() {
         if (self.levleTextLbl.text == "흙수저") {
             self.money += 100
+            self.showToast(message: "💵 + 100$")
         }
         else if (self.levleTextLbl.text == "동수저") {
             self.money += 300
+            self.showToast(message: "💵 + 300$")
         }
         else if (self.levleTextLbl.text == "은수저") {
             self.money += 750
+            self.showToast(message: "💵 + 750$")
         }
         else if (self.levleTextLbl.text == "금수저") {
             self.money -= 3000
             self.richCnt += 1
+            self.showToast(message: "숨쉬기 💵 + 500$")
         }
         
     }
@@ -299,50 +339,48 @@ class ViewController: UIViewController, sendMoney {
             DispatchQueue.main.async {
                 self.clickSecondBtn()
             }
-            usleep(10000000)
+            usleep(10000000) // 1분으로 할 예정
             DispatchQueue.main.async {
                 self.setSecondBtn()
-                self.bitCoinFunction()
+                self.difSecondMoney()
             }
         }
     }
     // MARK: 액티브 버튼 2 클릭
     func clickSecondBtn() {
         self.activeSecondBtn.isEnabled = false
-        self.money -= 3000
-        self.thirdSkillView.backgroundColor = .systemYellow
-        self.activeSecondBtn.setTitle("투자중...", for: .normal)
+        self.activeSecondBtn.tintColor = .systemGray
         self.activeSecondBtn.setTitleColor(.lightGray, for: .normal)
-        self.explainSecondLbl.text = "떡상 or 떡락"
         self.explainSecondLbl.textColor = .lightGray
     }
-    // MARK: 액티브 버튼 2 비활성화 UIColor
-    // 흙/동수저인 경우, 아예 비활성화
-    func cantSecondBtn() {
-        self.activeSecondBtn.isEnabled = false
-        self.thirdSkillView.backgroundColor = .darkGray
-        self.activeSecondBtn.setTitle("이용불가", for: .normal)
-        self.activeSecondBtn.setTitleColor(.lightGray, for: .normal)
-        self.explainSecondLbl.text = "은수저 이상"
-        self.explainSecondLbl.textColor = .lightGray
-    }
-    // MARK: 액티브 버튼 2 활성화 UIColor
-    // 비활성화 상태에서 시간이 지나고 다시 UI 바꿔주기
+
+    // MARK: 액티브 버튼 2 클릭 후
     func setSecondBtn() {
-        self.thirdSkillView.backgroundColor = .systemYellow
-        self.activeSecondBtn.setTitle("비트코인", for: .normal)
-        self.activeSecondBtn.setTitleColor(.magenta, for: .normal)
-        self.explainSecondLbl.text = "💵 - 3000$\n💵 + ??$ / 3분"
-        self.explainSecondLbl.textColor = .magenta
+        self.activeSecondBtn.setTitleColor(.black, for: .normal)
+        self.explainSecondLbl.textColor = .black
         self.activeSecondBtn.isEnabled = true
     }
-    // MARK: 액티브 버튼 2 비트코인
-    func bitCoinFunction()
-    {
-        let num = arc4random_uniform(10000)
-        let result = Int(num) - 4500
-        self.money += result
+    // MARK: 액티브 버튼 2 버는 돈
+    func difSecondMoney() {
+        if (self.levleTextLbl.text == "흙수저") {
+            self.money += 500
+            self.showToast(message: "💵 + 500$")
+        }
+        else if (self.levleTextLbl.text == "동수저") {
+            self.money += 1000
+            self.showToast(message: "💵 + 1000$")
+        }
+        else if (self.levleTextLbl.text == "은수저") {
+            self.money += 3000
+            self.showToast(message: "💵 + 3000$")
+        }
+        else if (self.levleTextLbl.text == "금수저") {
+            self.money += 5000
+            self.showToast(message: "💵 + 5000$")
+        }
+        
     }
+    
     
     
     
@@ -351,63 +389,32 @@ class ViewController: UIViewController, sendMoney {
     @objc func thirdButtonTapped() {
         DispatchQueue.global(qos: .background).async {
             DispatchQueue.main.async {
-                self.clickThirdBtn()
-            }
-            usleep(5000000)
-            DispatchQueue.main.async {
-                self.setFourthView()
-                
+                self.onlyGold()
             }
         }
-    }
-    // MARK: 액티브 버튼 3 클릭
-    func clickThirdBtn() {
-        self.activeThirdBtn.isEnabled = false
-        self.fourthSkillView.backgroundColor = .darkGray
-        self.activeThirdBtn.setTitle("앗싸~", for: .normal)
-        self.activeThirdBtn.setTitleColor(.lightGray, for: .normal)
-        self.explainThirdLbl.text = "기부금 받았다!"
-        self.explainThirdLbl.textColor = .lightGray
-        self.difFunction()
     }
     
     // MARK: Level 차별화 기능
-    func difFunction() {
-        if (self.levleTextLbl.text == "흙수저") {
-            self.money += Int(arc4random_uniform(1500))
-        }
-        else if (self.levleTextLbl.text == "동수저") {
-            self.money += Int(arc4random_uniform(2500))
-        }
-        else if (self.levleTextLbl.text == "은수저") {
-            self.money += Int(arc4random_uniform(3500))
-        }
-        
-        // MARK: casino 뷰컨 넘어가기
-        else if (self.levleTextLbl.text == "금수저") {
+    func onlyGold() {
+       if (self.levleTextLbl.text == "금수저") {
             let storyboard: UIStoryboard = UIStoryboard(name: "casino", bundle: nil)
             guard let nextView = storyboard.instantiateViewController(identifier: "casinoViewController") as? casinoViewController else {fatalError()}
             nextView.delegate = self
             present(nextView, animated: true, completion: nil)
         }
+       else {
+        self.showToast(message: "금수저만 이용 가능합니다")
+       }
     }
-    // MARK: 액티브 버튼3 원상복귀
-    func setFourthView() {
-        self.fourthSkillView.backgroundColor = .systemTeal
-        self.activeThirdBtn.setTitle("기 부 천 사", for: .normal)
-        self.activeThirdBtn.setTitleColor(.white, for: .normal)
-        self.explainThirdLbl.text = "💵 + ? $ / 10분"
-        self.explainThirdLbl.textColor = .white
-        self.activeThirdBtn.isEnabled = true
-    }
+
     
     // MARK: 금수저 전용 UIView
-    func forHihgLevel() {
-        self.fourthSkillView.backgroundColor = .black
-        self.activeThirdBtn.setTitle("카 지 노", for: .normal)
-        self.activeThirdBtn.setTitleColor(.systemRed, for: .normal)
-        self.explainThirdLbl.text = "인생 = 도박"
-        self.explainThirdLbl.textColor = .systemYellow
+    func forHighLevel() {
+        self.casinoImg.image = UIImage(named: "casinoBtn")
+        self.activeThirdBtn.setTitle("", for: .normal)
+        self.explainThirdLbl.text = "카 지 노"
+        self.explainThirdLbl.font = UIFont.boldSystemFont(ofSize: 30)
+        self.explainThirdLbl.textColor = .black
     }
     
 }

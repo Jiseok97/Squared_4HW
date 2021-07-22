@@ -14,6 +14,8 @@
 		B626AEBB26A5392D002ECD4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B626AEB926A5392D002ECD4D /* LaunchScreen.storyboard */; };
 		B626AEC626A5392D002ECD4D /* lifeGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626AEC526A5392D002ECD4D /* lifeGameTests.swift */; };
 		B626AED126A5392E002ECD4D /* lifeGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B626AED026A5392E002ECD4D /* lifeGameUITests.swift */; };
+		B637ABEC26A9353E00F152AE /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B637ABEB26A9353E00F152AE /* Help.storyboard */; };
+		B637ABEE26A9355000F152AE /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637ABED26A9355000F152AE /* HelpViewController.swift */; };
 		B6EEFDB326A7D177002DC7FC /* casino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6EEFDB226A7D177002DC7FC /* casino.storyboard */; };
 		B6F545E026A55A3A008C6727 /* imageFile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6F545DF26A55A3A008C6727 /* imageFile.xcassets */; };
 		B6F919AC26A6C7880014272B /* casinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F919AB26A6C7880014272B /* casinoViewController.swift */; };
@@ -50,6 +52,8 @@
 		B626AECC26A5392D002ECD4D /* lifeGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lifeGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B626AED026A5392E002ECD4D /* lifeGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifeGameUITests.swift; sourceTree = "<group>"; };
 		B626AED226A5392E002ECD4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B637ABEB26A9353E00F152AE /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		B637ABED26A9355000F152AE /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B6EEFDB226A7D177002DC7FC /* casino.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = casino.storyboard; sourceTree = "<group>"; };
 		B6F545DF26A55A3A008C6727 /* imageFile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = imageFile.xcassets; sourceTree = "<group>"; };
 		B6F919AB26A6C7880014272B /* casinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casinoViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				B626AEB226A5392D002ECD4D /* ViewController.swift */,
 				B6F919AB26A6C7880014272B /* casinoViewController.swift */,
+				B637ABED26A9355000F152AE /* HelpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				B626AEB426A5392D002ECD4D /* Main.storyboard */,
 				B6EEFDB226A7D177002DC7FC /* casino.storyboard */,
 				B626AEB926A5392D002ECD4D /* LaunchScreen.storyboard */,
+				B637ABEB26A9353E00F152AE /* Help.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			files = (
 				B626AEBB26A5392D002ECD4D /* LaunchScreen.storyboard in Resources */,
 				B6EEFDB326A7D177002DC7FC /* casino.storyboard in Resources */,
+				B637ABEC26A9353E00F152AE /* Help.storyboard in Resources */,
 				B626AEB626A5392D002ECD4D /* Main.storyboard in Resources */,
 				B6F545E026A55A3A008C6727 /* imageFile.xcassets in Resources */,
 			);
@@ -285,6 +292,7 @@
 				B6F919AC26A6C7880014272B /* casinoViewController.swift in Sources */,
 				B626AEAF26A5392D002ECD4D /* AppDelegate.swift in Sources */,
 				B626AEB126A5392D002ECD4D /* SceneDelegate.swift in Sources */,
+				B637ABEE26A9355000F152AE /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

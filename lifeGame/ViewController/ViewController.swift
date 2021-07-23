@@ -61,6 +61,7 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var activeImg: UIImageView!
     @IBOutlet weak var activeSkillBtn: UIButton!
     @IBOutlet weak var activeExplainLbl: UILabel!
+    @IBOutlet weak var nameSecondBtn: UILabel!
     
     
     // MARK: 액티브 기능2 UIView
@@ -68,6 +69,7 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var activeSecondImg: UIImageView!
     @IBOutlet weak var activeSecondBtn: UIButton!
     @IBOutlet weak var explainSecondLbl: UILabel!
+    @IBOutlet weak var nameThirdBtn: UILabel!
     
     
     
@@ -76,6 +78,8 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var casinoImg: UIImageView!
     @IBOutlet weak var activeThirdBtn: UIButton!
     @IBOutlet weak var explainThirdLbl: UILabel!
+    @IBOutlet weak var casinoLbl: UILabel!
+    
     
     
 
@@ -98,7 +102,7 @@ class ViewController: UIViewController, sendMoney {
         super.viewDidLoad()
         
         // 저장된 돈 불러오기
-        self.money = self.saveMoney.integer(forKey: self.myMoney)
+//        self.money = self.saveMoney.integer(forKey: self.myMoney)
         
         
         self.characterImg.layer.zPosition = 999
@@ -200,11 +204,11 @@ class ViewController: UIViewController, sendMoney {
                 self.levleTextLbl.textColor = .black
                 
                 // 액티브 1
-                self.activeSkillBtn.setTitle("구   걸", for: .normal)
+                self.nameSecondBtn.text = "구 걸"
                 self.activeExplainLbl.text = "💵 + 100$ / 10초"
                 
                 // 액티브 2
-                self.activeSecondBtn.setTitle("전철 구걸", for: .normal)
+                self.nameThirdBtn.text = "전철 구걸"
                 self.explainSecondLbl.text = "💵 + 500$ / 1분"
                 
             }
@@ -219,11 +223,11 @@ class ViewController: UIViewController, sendMoney {
                 self.passiveLbl.text = "💵 + 10$ / 1초"
                 
                 // 액티브 1
-                self.activeSkillBtn.setTitle("아르바이트", for: .normal)
+                self.nameSecondBtn.text = "아르바이트"
                 self.activeExplainLbl.text = "💵 + 300$ / 10초"
                 
                 // 액티브 2
-                self.activeSecondBtn.setTitle("과 외", for: .normal)
+                self.nameThirdBtn.text = "과 외"
                 self.explainSecondLbl.text = "💵 + 1000$/1분"
                 
             }
@@ -239,11 +243,11 @@ class ViewController: UIViewController, sendMoney {
                 self.passiveLbl.text = "💵 + 150$ / 1초"
                 
                 // 액티브 1
-                self.activeSkillBtn.setTitle("야 근", for: .normal)
+                self.nameSecondBtn.text = "야 근"
                 self.activeExplainLbl.text = "💵 + 750$ / 10초"
                 
                 // 액티브 2
-                self.activeSecondBtn.setTitle("투 잡", for: .normal)
+                self.nameThirdBtn.text = "투 잡"
                 self.explainSecondLbl.text = "💵 + 3000$/1분"
                 
                
@@ -259,11 +263,11 @@ class ViewController: UIViewController, sendMoney {
                 self.passiveLbl.text = "💵 + 500$/1초"
                 
                 // 액티브 1
-                self.activeSkillBtn.setTitle("건물 올리기", for: .normal)
-                self.activeExplainLbl.text = "💵 - 3000$\n패시브+500$(누적)"
+                self.nameSecondBtn.text = "건물 올리기"
+                self.activeExplainLbl.text = "💵 - 3000$\n패시브강화 +500$"
                 
                 // 액티브 2
-                self.activeSecondBtn.setTitle("월세 올리기", for: .normal)
+                self.nameThirdBtn.text = "월세 올리기"
                 self.explainSecondLbl.text = "💵 + 5000$/1분"
                 
                 // 액티브 3
@@ -430,9 +434,9 @@ class ViewController: UIViewController, sendMoney {
     // MARK: 금수저 전용 UIView
     func forHighLevel() {
         self.casinoImg.image = UIImage(named: "casinoBtn")
-        self.activeThirdBtn.setTitle("", for: .normal)
-        self.explainThirdLbl.text = "카 지 노"
-        self.explainThirdLbl.font = UIFont.boldSystemFont(ofSize: 30)
+        self.casinoLbl.text = "카 지 노"
+        self.casinoLbl.textColor = .black
+        self.explainThirdLbl.text = "이용 가능"
         self.explainThirdLbl.textColor = .black
     }
     

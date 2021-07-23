@@ -17,13 +17,23 @@ class casinoViewController: UIViewController {
     @IBOutlet weak var inputMoney: UITextField!
     @IBOutlet weak var bettingBtn: UIButton!
     @IBOutlet weak var resultImgView: UIImageView!
+    @IBOutlet weak var exitBtn: UIButton!
     var delegate : sendMoney?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setRadius()
     }
+    
+    // MARK: Radius setting
+    func setRadius() {
+        self.bettingBtn.layer.cornerRadius = 15
+        self.exitBtn.layer.cornerRadius = 15
+    }
+    
+    
+    // MARK: 베팅 기능
     @IBAction func bettingMoney(_ sender: Any) {
         let betMoney : Double? = Double(self.inputMoney.text!)
         var result : Int = 0

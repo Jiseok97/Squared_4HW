@@ -5,9 +5,6 @@
 //  Created by 이지석 on 2021/07/19.
 //
 
-// MARK: 각 액티브 버튼마다 시간 제한 확인하기 !
-// 동 -> 은 갈 때, 비트코인 버튼 초기화
-
 
 import UIKit
 
@@ -29,6 +26,12 @@ class ViewController: UIViewController, sendMoney {
     // Character Background
     @IBOutlet weak var charBgImage: UIImageView!
     @IBOutlet weak var helpBtn: UIButton!
+    @IBOutlet weak var resetBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    
+    // 초기화, 저장 뷰
+    @IBOutlet weak var saveView: UIView!
+    
     
     
     
@@ -38,6 +41,8 @@ class ViewController: UIViewController, sendMoney {
     @IBOutlet weak var moneyLbl: UILabel!
     @IBOutlet weak var characterImg: UIImageView!
     var money : Int = 16001
+    let saveMoney = UserDefaults.standard // for UserDefaults
+    var myMoney : String = "myMoney"
     var richCnt : Int = 0
     
     
@@ -92,6 +97,10 @@ class ViewController: UIViewController, sendMoney {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 저장된 돈 불러오기
+        self.money = self.saveMoney.integer(forKey: self.myMoney)
+        
+        
         self.characterImg.layer.zPosition = 999
         self.charBgImage.layer.zPosition = 0
         setRadius()
@@ -108,6 +117,7 @@ class ViewController: UIViewController, sendMoney {
         self.upgradeView.layer.cornerRadius = 20
         self.levelView.layer.cornerRadius = 20
         self.moneyView.layer.cornerRadius = 20
+        self.saveView.layer.cornerRadius = 20
     }
     
     
@@ -428,12 +438,33 @@ class ViewController: UIViewController, sendMoney {
     
     
     
-    
+    // MARK: 도움말 이동
     @IBAction func helpActBtn(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
         guard let nextView = storyboard.instantiateViewController(identifier: "HelpViewController") as? HelpViewController else {fatalError()}
         present(nextView, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    // MARK: 유저 돈 저장 기능
+    @IBAction func saveFuncBtn(_ sender: Any) {
+        self.saveMoney.set(self.money, forKey: self.myMoney)
+        showToast(message: "저장되었습니다")
+
+    }
+    
+    
+    
+    // MARK: 유저 돈 초기화
+    @IBAction func resetFuncBtn(_ sender: Any) {
+        self.saveMoney.removeObject(forKey: self.myMoney)
+        
+        showToast(message: "초기화되었습니다")
+//        self.money = 0
+    }
+    
     
     
 }

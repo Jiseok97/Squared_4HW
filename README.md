@@ -12,4 +12,4 @@ Thread
 멀티 쓰레드를 통한 각각의 기능 분리 및 자동화
 
 ## Developer
-iOS_Jiseok97
+iOS_Jiseok97 (by Swift)
